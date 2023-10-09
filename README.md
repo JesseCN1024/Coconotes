@@ -7,6 +7,7 @@
     <strong>Coconotes - A Markdown Note-Taking Web App</strong>
 </p>
 
+https://github.com/JesseCN1024/Coconotes/assets/100943944/f716ed4f-5973-427e-aad9-1908d74cb456
 
 # Overview
 Coconotes is a web-based note taking app that allows users to create notes in markdown format. Users can create multiple notes and have multi actions on each notes for easy organization.

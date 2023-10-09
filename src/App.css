@@ -1,3 +1,9 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto',sans-serif;
+}
 .App {
   text-align: center;
 }
@@ -34,5 +40,273 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+
+/* Elements CSS */
+
+.editor__textarea{
+    width: 100%;
+    height: 85vh;
+    resize: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 2px;
+    box-shadow: 0px 6px 10px -10px rgba(0, 0, 0, 0.5)
+}
+.sidebar__header, .editor__header{
+  height: 4.5rem;
+  margin-bottom: .5rem;
+}
+.editor{ 
+  position: relative;
+}
+.editor__tool{
+  padding: 0.5rem 1.5rem;
+  margin: 0;
+  background-color: white;
+  box-shadow: 0px 6px 10px -10px rgba(0,0,0,0.5);
+  list-style: none;
+  border-radius: 2.5rem;
+  display: flex;
+  align-items: center;
+}
+.editor__tool-btn{
+  margin: 0;
+  border-radius: 50%;
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+  color: #898B94;
+  margin: 0 .5rem;
+}
+.editor__tool-btn:hover{
+  background-color: rgba(0,0,0,.1);
+}
+.editor__saving, .spinner{
+  color: #898B94;
+}
+.editor__saving-text{
+  font-size: .85rem;
+  opacity: .5;
+}
+.spinner{
+   
+}
+
+
+.boundary-left{
+  /* content: "";
+  width: 3px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: red;
+  border-right: solid 1px red;
+  height: 100vh; */
+  box-shadow: -3px 0px 10px -10px rgba(0, 0, 0, 0.5);
+}
+
+.viewer{
+  height: 100vh;
+  overflow: auto;
+  position: relative;
+}
+
+::-webkit-scrollbar{
+  width: .3rem;
+}
+/* The drag thing of scrollbar */
+::-webkit-scrollbar-thumb{
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+.bg-platform{
+  background-color: #F3F6F9;
+}
+
+/* ---------SIDEBAR */
+.sidebar{
+  background-color: #F8FAFB;
+  height: 100vh;
+  box-shadow: 3px 0px 10px -10px rgba(0, 0, 0, 0.5);
+}
+.sidebar__title{
+  width: 80%;
+  height:auto;
+}
+.sidebar__notelist{
+  max-height: 85vh;
+  overflow: auto;
+}
+.sidebar__notelist-input{
+  width: 70%;
+  font-weight: 500;
+  color: #7d8187;
+  border:none;
+  background-color: transparent;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.input-pointer-none{
+  pointer-events: none;
+
+}
+
+.sidebar__notelist-input.is-selected{
+  color: white;
+}
+.sidebar__notelist-note{
+  transition: all .5s;
+}
+.sidebar__notelist-note:hover .sidebar__notelist-btn{
+  display: block;
+}
+.sidebar__notelist-btn{
+  display: none;
+  background-color: transparent;
+  border-radius: 4px;
+  padding: 0 4px;
+  font-size: .8rem;
+}
+.sidebar__notelist-btn:hover{
+  color: white;
+}
+
+
+/* Popup Section */
+.popup{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,.5);
+}
+
+.popup__inner{
+  position: relative;
+  padding: 1rem 2rem 2rem;
+  width: 100%;
+  max-width: 640px;
+  background-color: #fff;
+  border-radius: 6px;
+  min-height: 150px;
+}
+
+.popup__inner-header{
+  font-size: 1rem;
+  font-weight: 700;
+  /* padding-left: 1rem; */
+  color: #198754;
+  /* width: 50%; */
+  border-bottom: solid 1px #198754;
+  margin-bottom: 1rem;
+}
+
+.popup__inner .popup__inner-btn{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: white;
+}
+
+.popup__inner-close{
+  margin-left: 1rem;
+}
+.popup__inner-confirm{
+
+}
+
+/* Toast Section */
+.toaster{
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  padding: 1rem 0.4rem;
+  border-radius: 5px;
+  background-color: #F3F6F9;
+  min-width: 150px;
+}
+.toaster-animation{
+  animation: toastAnimation .4s ease-in-out;
+}
+.toaster span{
+  font-weight: 500;
+  max-width: 300px;
+  font-size: .9rem;
+}
+.toaster button{
+  border-radius: 50%;
+  background-color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: .8rem;
+}
+.toaster__slider{
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: #198754;
+}
+.toaster__slider-animation{
+  animation: sliderAnimation linear;
+}
+@keyframes toastAnimation{
+  from{
+    transform: translateX(-400px);
+  }
+  to{
+    transform: none;
+  }
+}
+@keyframes sliderAnimation{
+  from{
+    width: 100%;
+  }
+  to{
+    width: 0%;
+  }
+}
+
+
+
+.instruction{
+  min-width: 50px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -1.8rem;
+  border: 1px solid #898B94;
+  border-radius: 4px;
+  color: #898B94;
+  font-size: .8rem;
+  padding: 0.1rem;
+  background-color: white;
+  white-space: nowrap;
+  animation: showInstruction .1s linear 1s;
+  display: none;
+}
+.editor__tool-btn:hover .instruction{
+  cursor:default;
+  display: block;
+}
+@keyframes showInstruction{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
   }
 }
